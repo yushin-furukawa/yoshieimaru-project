@@ -1,0 +1,4801 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+section {
+    padding: 40px 20px;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Header */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid #e5e5e5;
+    backdrop-filter: blur(8px);
+}
+
+header h1 {
+    margin: 0 0 20px;
+    text-align: center;
+    font-size: 32px;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#main-nav {
+    display: flex;
+}
+
+nav a {
+    position: relative;
+    padding: 10px 14px;
+    color: #333;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #0077b6;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 3px;
+    width: 0;
+    height: 2px;
+    background-color: #0077b6;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 70%;
+}
+
+.menu-button {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Common page hero */
+.about-hero,
+.fishing-hero,
+.schedule-hero,
+.price-hero,
+.reserve-hero {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #e8f4f8;
+}
+
+.about-hero h2,
+.fishing-hero h2,
+.schedule-hero h2,
+.price-hero h2,
+.reserve-hero h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.about-hero p,
+.fishing-hero p,
+.schedule-hero p,
+.price-hero p,
+.reserve-hero p {
+    font-size: 18px;
+}
+
+/* Home hero */
+.hero {
+    position: relative;
+    height: 680px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.hero img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    margin: 0;
+    border-radius: 0;
+    transform: scale(1.02);
+    transition: transform 1.5s ease;
+}
+
+.hero:hover img {
+    transform: scale(1.06);
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.05),
+            rgba(0, 0, 0, 0.65));
+}
+
+.hero-content {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    bottom: 90px;
+    transform: translateX(-50%);
+    width: min(1000px, 90%);
+    text-align: left;
+    color: white;
+}
+
+.hero-content h2 {
+    font-size: clamp(48px, 7vw, 88px);
+    margin: 0 0 15px;
+    letter-spacing: 0.08em;
+}
+
+.hero-content p {
+    font-size: clamp(18px, 2vw, 26px);
+    margin: 0;
+    letter-spacing: 0.08em;
+}
+
+.section-label {
+    margin-bottom: 10px;
+    color: #0077b6;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* =========================
+   CARD STAGGER
+========================= */
+
+.hero-link-card:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.hero-link-card:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.hero-link-card:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+/* =========================
+   HOVER EFFECT
+========================= */
+
+.hero-link-card {
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        background-color 0.35s ease;
+}
+
+.hero-link-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.hero-link-arrow {
+    transition: transform 0.35s ease;
+}
+
+.hero-link-card:hover .hero-link-arrow {
+    transform: translateX(8px);
+}
+
+/* About */
+.about {
+    background-color: lightblue;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.about-content img {
+    width: 45%;
+    max-width: 450px;
+    border-radius: 10px;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+}
+
+.about-button,
+.section-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 13px 30px;
+    background-color: #0077b6;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.about-button {
+    padding: 12px 22px;
+}
+
+.about-button:hover,
+.section-button:hover {
+    background-color: #005f8f;
+    transform: translateY(-3px);
+}
+
+/* =========================
+   VISUAL STORY
+========================= */
+
+.visual-story {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 80px;
+    align-items: center;
+
+    max-width: 1200px;
+    margin: 140px auto;
+    padding: 0 40px;
+}
+
+
+.visual-story-image {
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+
+.visual-story-image img {
+    width: 100%;
+    height: 560px;
+
+    object-fit: cover;
+    display: block;
+
+    transition: transform 0.8s ease;
+}
+
+
+.visual-story-image:hover img {
+    transform: scale(1.04);
+}
+
+
+.visual-story-content {
+    max-width: 480px;
+}
+
+
+.visual-story-content h2 {
+    margin: 20px 0 30px;
+
+    font-size: 42px;
+    line-height: 1.4;
+}
+
+
+.visual-story-content p {
+    line-height: 2;
+}
+
+
+.visual-story-content .section-button {
+    display: inline-block;
+    margin-top: 30px;
+}
+
+/* =========================
+   VISUAL STORY ANIMATION
+========================= */
+
+.visual-story.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+.visual-story.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.visual-story.fade-in .visual-story-image img {
+    transform: scale(1.08);
+    transition: transform 1.2s ease;
+}
+
+.visual-story.fade-in.show .visual-story-image img {
+    transform: scale(1);
+}
+
+/* =========================
+   VISUAL STORY TEXT ANIMATION
+========================= */
+
+.visual-story-content .section-label,
+.visual-story-content h2,
+.visual-story-content p,
+.visual-story-content .section-button {
+    opacity: 0;
+    transform: translateY(25px);
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.visual-story.show .visual-story-content .section-label {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}
+
+.visual-story.show .visual-story-content h2 {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.35s;
+}
+
+.visual-story.show .visual-story-content p {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+}
+
+.visual-story.show .visual-story-content .section-button {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.65s;
+}
+
+/* =========================
+   PHOTO GALLERY
+========================= */
+
+.photo-gallery {
+    max-width: 1200px;
+    margin: 140px auto;
+    padding: 0 40px;
+}
+
+.photo-gallery-heading {
+    margin-bottom: 50px;
+}
+
+.photo-gallery-heading h2 {
+    font-size: 42px;
+    margin: 15px 0 20px;
+}
+
+.photo-gallery-heading p {
+    line-height: 2;
+}
+
+.photo-gallery-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    grid-template-rows: 280px 280px;
+    gap: 20px;
+}
+
+.photo-gallery-item {
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.photo-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+    transition: transform 0.8s ease;
+}
+
+.photo-gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.photo-gallery-large {
+    grid-row: 1 / 3;
+}
+
+/* Home links */
+.hero-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 70px 20px;
+}
+
+.hero-link-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 150px;
+    padding: 30px;
+    background-color: white;
+    color: #222;
+    text-decoration: none;
+    border-right: 1px solid #ddd;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition:
+        background-color 0.4s ease,
+        color 0.4s ease,
+        transform 0.4s ease;
+}
+
+.hero-link-card:last-child {
+    border-right: none;
+}
+
+.hero-link-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 4px;
+    background-color: #0077b6;
+    transition: width 0.4s ease;
+}
+
+.hero-link-card:hover {
+    background-color: #0077b6;
+    color: white;
+    transform: translateY(-6px);
+}
+
+.hero-link-card:hover::before {
+    width: 100%;
+}
+
+.hero-link-number {
+    align-self: flex-start;
+    margin-right: 25px;
+    color: #999;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.hero-link-content {
+    flex: 1;
+}
+
+.hero-link-content span {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.hero-link-content small {
+    display: block;
+    margin-top: 8px;
+    color: #888;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.hero-link-card:hover .hero-link-content small {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-link-arrow {
+    font-size: 28px;
+    transition: transform 0.3s ease;
+}
+
+.hero-link-card:hover .hero-link-arrow {
+    transform: translateX(8px);
+}
+
+.next-schedule {
+    padding: 80px 20px;
+    background-color: #f5f7f8;
+}
+
+.next-schedule-heading {
+    max-width: 1100px;
+    margin: 0 auto 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 30px;
+}
+
+.next-schedule-heading h2 {
+    margin-bottom: 10px;
+}
+
+.next-schedule-heading p {
+    margin: 0;
+}
+
+.next-schedule-list {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    gap: 16px;
+}
+
+.next-schedule-card {
+    background: white;
+    padding: 24px 28px;
+    display: grid;
+    grid-template-columns: 120px 1fr auto;
+    align-items: center;
+    gap: 30px;
+    border: 1px solid #e5e5e5;
+}
+
+.next-schedule-date {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+}
+
+.next-schedule-date span {
+    font-size: 14px;
+}
+
+.next-schedule-date strong {
+    font-size: 42px;
+    line-height: 1;
+}
+
+.next-schedule-date small {
+    font-size: 15px;
+}
+
+.next-schedule-info>span {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #777;
+}
+
+.next-schedule-info h3 {
+    margin: 6px 0;
+}
+
+.next-schedule-info p {
+    margin: 0;
+    color: #666;
+}
+
+.next-schedule-status strong {
+    font-size: 16px;
+}
+
+
+
+/* =========================
+   About section
+========================= */
+
+.about-section {
+    padding: 120px 20px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.about-inner {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-image-wrap {
+    position: relative;
+}
+
+.about-image-wrap img {
+    display: block;
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.about-image-label {
+    position: absolute;
+    right: -25px;
+    bottom: 30px;
+    padding: 12px 18px;
+    background-color: #0077b6;
+    color: white;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.about-section .about-text {
+    max-width: 480px;
+}
+
+.about-section .about-text h2 {
+    margin: 15px 0 30px;
+    font-size: clamp(38px, 4vw, 58px);
+    line-height: 1.3;
+    letter-spacing: 0.05em;
+}
+
+.about-lead {
+    margin-bottom: 10px;
+    font-size: 21px !important;
+    font-weight: bold;
+    color: #222;
+}
+
+.about-section .about-text p:not(.section-label):not(.about-lead) {
+    line-height: 2;
+    color: #666;
+}
+
+.about-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 25px;
+    padding: 15px 20px;
+    border-bottom: 1px solid #f5f7f8;
+    color: #f5f7f8;
+    text-decoration: none;
+    transition: gap 0.3s ease, color 0.3s ease;
+}
+
+.about-button span {
+    font-size: 20px;
+}
+
+.about-button:hover {
+    gap: 45px;
+    color: #f5f5f5;
+}
+
+/* =========================
+   About page
+========================= */
+
+.about-modern-hero {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    min-height: 650px;
+    background-color: #f5f7f8;
+}
+
+.about-modern-hero-image {
+    overflow: hidden;
+}
+
+.about-modern-hero-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 650px;
+    object-fit: cover;
+}
+
+.about-modern-hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 70px;
+}
+
+.about-modern-hero-content h2 {
+    margin: 15px 0 25px;
+    font-size: clamp(42px, 5vw, 68px);
+    line-height: 1.3;
+}
+
+.about-modern-hero-content p:not(.section-label) {
+    max-width: 450px;
+    color: #666;
+    line-height: 2;
+}
+
+
+/* Story */
+
+.about-story {
+    padding: 120px 20px;
+    background-color: white;
+}
+
+.about-story-inner {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 100px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-story-heading h2 {
+    margin-top: 10px;
+    font-size: 52px;
+    line-height: 1.3;
+}
+
+.about-story-text {
+    align-self: end;
+}
+
+.about-story-text .about-lead {
+    margin-bottom: 15px;
+    color: #222;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.about-story-text p:not(.about-lead) {
+    color: #666;
+    line-height: 2;
+}
+
+
+/* Feature */
+
+.about-feature {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    background-color: #f5f7f8;
+}
+
+.about-feature-image {
+    overflow: hidden;
+}
+
+.about-feature-image img {
+    display: block;
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+.about-feature-content {
+    padding: 70px;
+}
+
+.about-feature-content h2 {
+    margin: 10px 0 25px;
+    font-size: clamp(40px, 5vw, 58px);
+    line-height: 1.3;
+}
+
+.about-feature-content p:not(.section-label) {
+    max-width: 430px;
+    color: #666;
+    line-height: 2;
+}
+
+
+/* Message */
+
+.about-message {
+    padding: 130px 20px;
+    background-color: #0d2733;
+    color: white;
+}
+
+.about-message-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-message .section-label {
+    color: #70c7e8;
+}
+
+.about-message h2 {
+    margin: 15px 0 30px;
+    font-size: clamp(40px, 5vw, 62px);
+    line-height: 1.4;
+}
+
+.about-message p:not(.section-label) {
+    max-width: 650px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 2;
+}
+
+
+/* Profile */
+
+.about-profile {
+    padding: 110px 20px;
+    background-color: white;
+}
+
+.about-profile-inner {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 80px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-profile h2 {
+    margin-top: 10px;
+    font-size: 48px;
+}
+
+.about-profile-list {
+    border-top: 1px solid #ddd;
+}
+
+.about-profile-list div {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 20px;
+    padding: 22px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.about-profile-list span {
+    color: #0077b6;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.about-profile-list strong {
+    font-size: 16px;
+}
+
+
+/* CTA */
+
+.about-cta {
+    padding: 110px 20px;
+    background-color: #e8f4f8;
+    text-align: center;
+}
+
+.about-cta h2 {
+    margin: 15px 0 25px;
+    font-size: clamp(40px, 5vw, 60px);
+    line-height: 1.3;
+}
+
+.about-cta p:not(.section-label) {
+    color: #666;
+}
+
+.about-cta-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.about-cta-sub {
+    color: #222;
+    text-decoration: none;
+    border-bottom: 1px solid #222;
+    padding-bottom: 5px;
+}
+
+/* =========================
+   About real information
+========================= */
+
+.about-modern-hero {
+    padding: 110px 20px;
+    text-align: center;
+    background-color: #e8f4f8;
+}
+
+.about-modern-hero h2 {
+    margin: 10px 0 25px;
+    font-size: clamp(45px, 6vw, 70px);
+}
+
+.about-modern-hero p:not(.section-label) {
+    color: #666;
+    line-height: 1.9;
+}
+
+
+/* Story */
+
+.about-story {
+    padding: 120px 20px;
+    background-color: white;
+}
+
+.about-story-inner {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 100px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-story-heading h2 {
+    margin: 10px 0;
+    font-size: clamp(42px, 5vw, 60px);
+    line-height: 1.3;
+}
+
+.about-story-text {
+    padding-top: 10px;
+}
+
+.about-story-text p {
+    margin: 0 0 25px;
+    color: #666;
+    line-height: 2;
+}
+
+/* =========================
+   ABOUT STORY IMAGE
+========================= */
+
+.about-story-image {
+    width: 100%;
+    overflow: hidden;
+}
+
+.about-story-image img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    display: block;
+}
+
+.about-story-content {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+/* =========================
+   ABOUT EQUIPMENT
+========================= */
+
+.about-equipment {
+    padding: 100px 20px;
+    background: #f5f7f8;
+}
+
+.about-equipment-heading {
+    max-width: 1100px;
+    margin: 0 auto 50px;
+}
+
+.about-equipment-heading h2 {
+    font-size: 40px;
+    margin: 12px 0 18px;
+}
+
+.about-equipment-heading p:last-child {
+    max-width: 600px;
+    line-height: 1.9;
+    color: #666;
+}
+
+.about-equipment-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.equipment-card {
+    background: white;
+    overflow: hidden;
+}
+
+.equipment-image {
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+}
+
+.equipment-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.equipment-card:hover .equipment-image img {
+    transform: scale(1.04);
+}
+
+.equipment-content {
+    padding: 28px;
+}
+
+.equipment-content>span {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #888;
+}
+
+.equipment-content h3 {
+    margin: 14px 0 12px;
+    font-size: 21px;
+}
+
+.equipment-content p {
+    margin: 0;
+    color: #666;
+    line-height: 1.8;
+}
+
+
+/* Safety */
+
+.about-safety {
+    padding: 120px 20px;
+    background-color: #0d2733;
+    color: white;
+    text-align: center;
+}
+
+.about-safety-inner {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-safety .section-label {
+    color: #70c7e8;
+}
+
+.about-safety h2 {
+    margin: 10px 0 25px;
+    font-size: clamp(42px, 5vw, 62px);
+}
+
+.about-safety p {
+    max-width: 650px;
+    margin: 0 auto 25px;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 2;
+}
+
+.about-safety strong {
+    font-size: 20px;
+}
+
+
+/* Beginner */
+
+.about-beginner {
+    padding: 110px 20px;
+    background-color: #f5f7f8;
+}
+
+.about-beginner-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-beginner h2 {
+    margin: 10px 0;
+    font-size: clamp(40px, 5vw, 56px);
+    line-height: 1.3;
+}
+
+.about-beginner-inner>div:last-child {
+    align-self: end;
+}
+
+.about-beginner-inner>div:last-child p {
+    color: #666;
+    line-height: 2;
+}
+
+
+/* Service */
+
+.about-service {
+    padding: 110px 20px;
+    background-color: white;
+}
+
+.about-service-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-service h2 {
+    margin: 10px 0;
+    font-size: 48px;
+    line-height: 1.3;
+}
+
+.service-list {
+    border-top: 1px solid #ddd;
+}
+
+.service-list>div {
+    display: grid;
+    grid-template-columns: 45px 1fr;
+    gap: 20px;
+    padding: 25px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.service-list span {
+    color: #0077b6;
+    font-size: 11px;
+}
+
+.service-list h3 {
+    margin: 0 0 8px;
+    font-size: 21px;
+}
+
+.service-list p {
+    margin: 0;
+    color: #777;
+    line-height: 1.7;
+}
+
+
+/* CTA */
+
+.about-cta {
+    padding: 120px 20px;
+    background-color: #e8f4f8;
+    text-align: center;
+}
+
+.about-cta h2 {
+    margin: 10px 0 20px;
+    font-size: clamp(45px, 6vw, 70px);
+}
+
+.about-cta p:not(.section-label) {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    color: #666;
+    line-height: 2;
+}
+
+/* =========================
+   Latest catch
+========================= */
+
+.catch-section {
+    padding: 120px 20px;
+    background-color: #f5f7f8;
+}
+
+.catch-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto 45px;
+}
+
+.catch-heading h2 {
+    margin: 10px 0 0;
+    font-size: clamp(38px, 5vw, 56px);
+    letter-spacing: 0.04em;
+}
+
+.catch-heading-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #333;
+    color: #333;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: gap 0.3s ease, color 0.3s ease;
+}
+
+.catch-heading-link span {
+    font-size: 20px;
+}
+
+.catch-heading-link:hover {
+    gap: 30px;
+    color: #0077b6;
+}
+
+.catch-section .catch-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.catch-section .catch-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: none;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.catch-section .catch-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+}
+
+.catch-section .catch-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 0;
+    transition: transform 0.6s ease;
+}
+
+.catch-section .catch-card:hover img {
+    transform: scale(1.05);
+}
+
+.catch-section .catch-card h3 {
+    margin: 20px 20px 8px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.catch-section .catch-card p {
+    margin: 0 20px 15px;
+    color: #888;
+    font-size: 13px;
+}
+
+.catch-section .catch-card a {
+    align-self: flex-start;
+    margin: auto 20px 20px;
+    padding: 10px 0;
+    background: none;
+    color: #333;
+    border-radius: 0;
+    border-bottom: 1px solid #333;
+}
+
+.catch-section .catch-card a:hover {
+    background: none;
+    color: #0077b6;
+    transform: none;
+}
+
+/* =========================
+   Schedule preview
+========================= */
+
+.schedule-preview {
+    padding: 120px 20px;
+    background-color: #fff;
+}
+
+.schedule-preview-inner {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: center;
+    gap: 70px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.schedule-preview-heading h2 {
+    margin: 10px 0 20px;
+    font-size: clamp(38px, 5vw, 56px);
+    line-height: 1.3;
+}
+
+.schedule-preview-heading>p:not(.section-label) {
+    color: #666;
+    line-height: 1.8;
+}
+
+.schedule-preview-heading .section-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.schedule-preview-heading .section-button span {
+    font-size: 20px;
+}
+
+.schedule-preview-card {
+    display: grid;
+    grid-template-columns: 150px 1fr auto;
+    align-items: center;
+    gap: 30px;
+    padding: 40px;
+    background-color: #f5f7f8;
+    border-left: 4px solid #0077b6;
+}
+
+.schedule-preview-date {
+    text-align: center;
+}
+
+.schedule-preview-date span,
+.schedule-preview-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #0077b6;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.schedule-preview-date strong {
+    display: block;
+    font-size: 42px;
+    line-height: 1;
+}
+
+.schedule-preview-date small {
+    display: block;
+    margin-top: 10px;
+    color: #888;
+}
+
+.schedule-preview-info h3 {
+    margin: 5px 0 20px;
+    font-size: 21px;
+}
+
+.schedule-preview-details {
+    display: flex;
+    gap: 30px;
+}
+
+.schedule-preview-details p {
+    margin: 0;
+    color: #666;
+}
+
+.schedule-preview-details span {
+    margin-right: 8px;
+    color: #222;
+    font-weight: bold;
+}
+
+.schedule-preview-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    padding: 13px 18px;
+    background-color: #0077b6;
+    color: white;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.schedule-preview-button:hover {
+    background-color: #005f8f;
+    transform: translateX(5px);
+}
+
+.schedule-preview-button span {
+    font-size: 18px;
+}
+
+.schedule-loading {
+    padding: 50px 20px;
+    text-align: center;
+    color: #777;
+    line-height: 1.8;
+}
+
+/* =========================
+   Price preview
+========================= */
+
+.price-preview {
+    padding: 120px 20px;
+    background-color: #f5f7f8;
+}
+
+.price-preview-inner {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: center;
+    gap: 70px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.price-preview-heading h2 {
+    margin: 10px 0 20px;
+    font-size: clamp(38px, 5vw, 56px);
+}
+
+.price-preview-heading>p:not(.section-label) {
+    color: #666;
+    line-height: 1.8;
+}
+
+.price-preview-heading .section-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.price-preview-heading .section-button span {
+    font-size: 20px;
+}
+
+.price-preview-card {
+    padding: 45px;
+    background-color: white;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+.price-preview-main {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+.price-preview-main span {
+    display: block;
+    margin-bottom: 12px;
+    color: #0077b6;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.price-preview-main strong {
+    display: block;
+    font-size: 48px;
+}
+
+.price-preview-main small {
+    display: block;
+    margin-top: 10px;
+    color: #888;
+}
+
+.price-preview-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 25px;
+}
+
+.price-preview-items div {
+    padding: 0 20px;
+    border-right: 1px solid #ddd;
+}
+
+.price-preview-items div:first-child {
+    padding-left: 0;
+}
+
+.price-preview-items div:last-child {
+    border-right: none;
+}
+
+.price-preview-items span {
+    display: block;
+    margin-bottom: 8px;
+    color: #777;
+    font-size: 13px;
+}
+
+.price-preview-items strong {
+    font-size: 18px;
+}
+
+/* =========================
+   Real price information
+========================= */
+
+.price-discount {
+    padding: 100px 20px;
+    background-color: #e8f4f8;
+}
+
+.price-discount-inner {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 70px;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.price-discount h2 {
+    margin-top: 10px;
+    font-size: 48px;
+    line-height: 1.3;
+}
+
+.price-discount-card {
+    padding: 40px;
+    background-color: white;
+    border-left: 4px solid #0077b6;
+}
+
+.price-discount-card span {
+    display: block;
+    color: #0077b6;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.price-discount-card strong {
+    display: block;
+    margin: 15px 0;
+    font-size: 42px;
+}
+
+.price-discount-card p {
+    margin: 0;
+    color: #666;
+    line-height: 1.8;
+}
+
+
+/* Rental */
+
+.rental-section {
+    padding: 110px 20px;
+    background-color: white;
+}
+
+.rental-heading {
+    max-width: 1000px;
+    margin: 0 auto 50px;
+}
+
+.rental-heading h2 {
+    margin: 10px 0 15px;
+    font-size: 48px;
+}
+
+.rental-heading p:not(.section-label) {
+    color: #777;
+}
+
+.rental-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #ddd;
+}
+
+.rental-list>div {
+    padding: 35px;
+    background-color: white;
+}
+
+.rental-list span {
+    color: #0077b6;
+    font-size: 11px;
+}
+
+.rental-list h3 {
+    margin: 15px 0;
+    font-size: 21px;
+}
+
+.rental-list strong {
+    font-size: 30px;
+}
+
+
+/* Notes */
+
+.price-notes {
+    padding: 110px 20px;
+    background-color: #f5f7f8;
+}
+
+.price-notes-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.price-notes-inner h2 {
+    margin: 10px 0 45px;
+    font-size: 48px;
+}
+
+.price-note-list {
+    border-top: 1px solid #ddd;
+}
+
+.price-note-list>div {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 20px;
+    padding: 25px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.price-note-list span {
+    color: #0077b6;
+    font-size: 11px;
+}
+
+.price-note-list h3 {
+    margin: 0 0 7px;
+    font-size: 20px;
+}
+
+.price-note-list p {
+    margin: 0;
+    color: #777;
+    line-height: 1.7;
+}
+
+/* =========================
+   Reservation CTA
+========================= */
+
+.reservation-cta {
+    padding: 120px 20px;
+    background-color: #0d2733;
+    color: white;
+}
+
+.reservation-cta-inner {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.reservation-cta-heading .section-label {
+    color: #70c7e8;
+}
+
+.reservation-cta-heading h2 {
+    margin: 15px 0 25px;
+    font-size: clamp(42px, 5vw, 64px);
+    line-height: 1.25;
+    letter-spacing: 0.04em;
+}
+
+.reservation-cta-heading>p:not(.section-label) {
+    max-width: 430px;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.9;
+}
+
+.reservation-cta-actions {
+    display: flex;
+    flex-direction: column;
+}
+
+.reservation-action {
+    display: grid;
+    grid-template-columns: 50px 1fr 30px;
+    align-items: center;
+    gap: 20px;
+    padding: 25px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    color: white;
+    text-decoration: none;
+    transition: padding 0.3s ease, background-color 0.3s ease;
+}
+
+.reservation-action:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.reservation-action:hover {
+    padding-left: 30px;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.reservation-action-number {
+    color: #70c7e8;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.reservation-action-text {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.reservation-action-arrow {
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+
+.reservation-action:hover .reservation-action-arrow {
+    transform: translateX(8px);
+}
+
+/* =========================
+   Reservation real information
+========================= */
+
+.reservation-phone-card {
+    margin-top: 40px;
+    padding: 45px;
+    background-color: #f5f7f8;
+    border-left: 4px solid #0077b6;
+}
+
+.reservation-phone-card>span {
+    display: block;
+    margin-bottom: 10px;
+    color: #0077b6;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.reservation-phone-card p {
+    margin: 0 0 15px;
+    color: #666;
+}
+
+.reservation-phone-card a {
+    display: block;
+    margin-bottom: 10px;
+    color: #222;
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+}
+
+.reservation-phone-card a:hover {
+    color: #0077b6;
+}
+
+.reservation-phone-card small {
+    color: #888;
+}
+
+
+.reservation-beginner {
+    padding: 110px 20px;
+    background-color: #e8f4f8;
+}
+
+.reservation-beginner-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.reservation-beginner h2 {
+    margin: 10px 0;
+    font-size: clamp(40px, 5vw, 58px);
+    line-height: 1.3;
+}
+
+.reservation-beginner-inner>div:last-child {
+    align-self: end;
+}
+
+.reservation-beginner-inner>div:last-child p {
+    color: #666;
+    line-height: 2;
+}
+
+
+.reservation-cancel {
+    padding: 110px 20px;
+    background-color: #f5f7f8;
+}
+
+.reservation-cancel-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.reservation-cancel h2 {
+    margin: 10px 0 45px;
+    font-size: clamp(38px, 5vw, 52px);
+}
+
+.cancel-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.cancel-list>div {
+    padding: 30px;
+    background-color: white;
+    text-align: center;
+}
+
+.cancel-list span {
+    display: block;
+    color: #777;
+    font-size: 14px;
+}
+
+.cancel-list strong {
+    display: block;
+    margin: 10px 0;
+    color: #0077b6;
+    font-size: 40px;
+}
+
+.cancel-list p {
+    margin: 0;
+    color: #888;
+    font-size: 13px;
+}
+
+.cancel-note {
+    margin-top: 25px;
+    color: #666;
+}
+
+
+.reservation-final-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 16px 30px;
+    background-color: #0077b6;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.reservation-final-button:hover {
+    background-color: #005f8f;
+    transform: translateY(-3px);
+}
+
+
+/* Footer phone */
+
+.footer-contact a {
+    display: block;
+    margin-top: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    color: #70c7e8;
+}
+
+/* =========================
+   Footer
+========================= */
+
+.site-footer {
+    padding: 80px 20px 25px;
+    background-color: #081c25;
+    color: white;
+}
+
+.footer-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 0.8fr;
+    gap: 70px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-brand h2 {
+    margin: 0 0 20px;
+    font-size: 32px;
+    letter-spacing: 0.08em;
+}
+
+.footer-brand p {
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.9;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-column h3 {
+    margin: 0 0 20px;
+    color: #70c7e8;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.footer-column a {
+    margin-bottom: 12px;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-column a:hover {
+    padding-left: 5px;
+    color: white;
+}
+
+.footer-contact p {
+    margin: 0 0 15px;
+    color: #70c7e8;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.footer-contact strong {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.footer-contact span {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 70px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 12px;
+}
+
+.footer-bottom a {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.footer-bottom a:hover {
+    color: white;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Fishing */
+.fishing-list {
+    display: flex;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.fishing-card {
+    flex: 1;
+    padding: 25px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.fishing-card h3 {
+    font-size: 24px;
+    margin-top: 0;
+}
+
+.fishing-card p {
+    line-height: 1.8;
+}
+
+
+
+/* =========================
+   Fishing page
+========================= */
+
+.fishing-modern-hero {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #e8f4f8;
+}
+
+.fishing-modern-hero h2 {
+    margin: 10px 0 20px;
+    font-size: clamp(45px, 6vw, 72px);
+    letter-spacing: 0.08em;
+}
+
+.fishing-modern-hero p:not(.section-label) {
+    color: #666;
+}
+
+
+/* Intro */
+
+.fishing-intro {
+    padding: 120px 20px;
+    background-color: white;
+}
+
+.fishing-intro-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.fishing-intro h2 {
+    margin: 10px 0;
+    font-size: clamp(40px, 5vw, 60px);
+    line-height: 1.3;
+}
+
+.fishing-intro-inner>div:last-child {
+    align-self: end;
+}
+
+.fishing-intro-inner>div:last-child p {
+    color: #666;
+    line-height: 2;
+}
+
+
+/* =========================
+   FISHING SEASON IMAGE
+========================= */
+
+.fishing-season-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.fishing-season-card {
+    overflow: hidden;
+}
+
+.fishing-season-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+}
+
+.fishing-season-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.fishing-season-card:hover .fishing-season-image img {
+    transform: scale(1.05);
+}
+
+.fishing-season-content {
+    padding-top: 25px;
+}
+
+.fishing-season-content span {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: #888;
+}
+
+.fishing-season-content h3 {
+    margin: 8px 0 15px;
+    font-size: 30px;
+}
+
+.fishing-season-main {
+    font-weight: bold;
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.fishing-season-content>p:last-child {
+    line-height: 1.8;
+    color: #555;
+}
+
+
+/* CTA */
+
+.fishing-cta {
+    padding: 110px 20px;
+    background-color: #0d2733;
+    color: white;
+    text-align: center;
+}
+
+.fishing-cta .section-label {
+    color: #70c7e8;
+}
+
+.fishing-cta h2 {
+    margin: 15px 0 25px;
+    font-size: clamp(40px, 5vw, 60px);
+}
+
+.fishing-cta p:not(.section-label) {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.fishing-cta-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.fishing-cta-sub {
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    padding-bottom: 5px;
+}
+
+/* =========================
+   Real Fishing Information
+========================= */
+
+.fishing-recommend {
+    padding: 100px 20px;
+    background-color: #0d2733;
+    color: white;
+}
+
+.fishing-recommend-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.fishing-recommend .section-label {
+    color: #70c7e8;
+}
+
+.fishing-recommend h2 {
+    margin: 10px 0;
+    font-size: clamp(40px, 5vw, 58px);
+    line-height: 1.3;
+}
+
+.fishing-recommend-inner>div:last-child p {
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 2;
+}
+
+
+/* Seasonal fishing */
+
+.season-fishing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: #ddd;
+}
+
+.season-fishing-card {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 25px;
+    padding: 40px;
+    background-color: white;
+}
+
+.season-number {
+    color: #0077b6;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.season-fishing-card span {
+    color: #0077b6;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.season-fishing-card h3 {
+    margin: 8px 0 15px;
+    font-size: 30px;
+}
+
+.season-fishing-card p {
+    margin: 0;
+    color: #666;
+    line-height: 1.9;
+}
+
+
+/* Capacity */
+
+.fishing-capacity {
+    padding: 110px 20px;
+    background-color: #f5f7f8;
+}
+
+.fishing-capacity-inner {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 80px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.fishing-capacity h2 {
+    margin: 10px 0 20px;
+    font-size: 48px;
+}
+
+.fishing-capacity-inner>div:first-child>p:last-child {
+    color: #777;
+}
+
+.capacity-list {
+    border-top: 1px solid #ddd;
+}
+
+.capacity-list div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.capacity-list span {
+    color: #666;
+}
+
+.capacity-list strong {
+    color: #0077b6;
+    font-size: 20px;
+}
+
+
+/* Beginner */
+
+.fishing-beginner {
+    padding: 110px 20px;
+    background-color: white;
+    text-align: center;
+}
+
+.fishing-beginner-inner {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.fishing-beginner h2 {
+    margin: 10px 0 25px;
+    font-size: clamp(40px, 5vw, 58px);
+    line-height: 1.3;
+}
+
+.fishing-beginner p:not(.section-label) {
+    color: #666;
+    line-height: 2;
+}
+
+/* =========================
+   FISHING PAGE
+========================= */
+
+.fishing-hero {
+    padding: 110px 20px 80px;
+    text-align: center;
+    background: #f5f7f8;
+}
+
+.fishing-hero h2 {
+    font-size: 48px;
+    margin: 15px 0;
+}
+
+.fishing-season {
+    padding: 100px 20px;
+}
+
+.fishing-season-heading {
+    max-width: 1100px;
+    margin: 0 auto 50px;
+}
+
+.fishing-season-heading h2 {
+    font-size: 40px;
+    margin: 12px 0 18px;
+}
+
+.fishing-season-heading p:last-child {
+    max-width: 650px;
+    color: #666;
+    line-height: 1.9;
+}
+
+.fishing-season-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.fishing-season-card {
+    padding: 32px;
+    background: #f5f7f8;
+    min-height: 280px;
+    box-sizing: border-box;
+}
+
+.fishing-season-card>span {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #888;
+}
+
+.fishing-season-card h3 {
+    font-size: 30px;
+    margin: 15px 0;
+}
+
+.fishing-season-main {
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.fishing-season-card p:last-child {
+    color: #666;
+    line-height: 1.8;
+}
+
+.fishing-popular {
+    padding: 90px 20px;
+    background: #f5f7f8;
+}
+
+.fishing-popular-heading {
+    max-width: 1100px;
+    margin: 0 auto 40px;
+}
+
+.fishing-popular-heading h2 {
+    font-size: 40px;
+    margin-top: 12px;
+}
+
+.fishing-popular-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.fishing-popular-grid article {
+    background: white;
+    padding: 40px;
+}
+
+.fishing-popular-grid span {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #888;
+}
+
+.fishing-popular-grid h3 {
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+.fishing-popular-grid p {
+    color: #666;
+    line-height: 1.8;
+}
+
+.fishing-types {
+    padding: 100px 20px;
+}
+
+.fishing-types>h2,
+.fishing-types>.section-label {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fishing-types>h2 {
+    font-size: 40px;
+    margin-top: 12px;
+}
+
+.fishing-type-list {
+    max-width: 1100px;
+    margin: 50px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: #ddd;
+}
+
+.fishing-type-list>div {
+    padding: 35px;
+    background: white;
+}
+
+.fishing-type-list span {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #888;
+}
+
+.fishing-type-list h3 {
+    font-size: 24px;
+    margin: 15px 0 10px;
+}
+
+.fishing-type-list p {
+    color: #666;
+    line-height: 1.8;
+}
+
+.fishing-cta {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.fishing-cta h2 {
+    font-size: 38px;
+    margin: 15px 0;
+}
+
+/* ========================================
+   FISHING EQUIPMENT
+======================================== */
+
+.fishing-equipment {
+    padding: 120px 7%;
+    background-color: #f5f7f8;
+}
+
+.fishing-equipment-heading {
+    max-width: 700px;
+    margin-bottom: 60px;
+}
+
+.fishing-equipment-heading h2 {
+    margin: 15px 0 20px;
+    font-size: 42px;
+}
+
+.fishing-equipment-heading p:last-child {
+    font-size: 17px;
+    line-height: 2;
+}
+
+
+.fishing-equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+
+.fishing-equipment-grid article {
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+
+.fishing-equipment-grid article img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+
+
+.fishing-equipment-grid article>div {
+    padding: 30px;
+}
+
+
+.fishing-equipment-grid article span {
+    display: block;
+    margin-bottom: 15px;
+    color: #0784bd;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+}
+
+
+.fishing-equipment-grid article h3 {
+    margin: 0 0 15px;
+    font-size: 23px;
+}
+
+
+.fishing-equipment-grid article p {
+    margin: 0;
+    color: #666;
+    line-height: 1.9;
+}
+
+/* Catch */
+.catch {
+    background-color: #f5f5f5;
+}
+
+.catch h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.catch-list {
+    display: flex;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 30px auto 0;
+}
+
+.catch-card {
+    flex: 1;
+    min-width: 0;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.catch-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.catch-card h3 {
+    margin: 18px 20px 8px;
+    font-size: 20px;
+}
+
+.catch-card p {
+    margin: 0 20px 15px;
+    color: #666;
+}
+
+.catch-card a,
+.catch-more a,
+.price-reserve a,
+.reserve-button {
+    display: inline-block;
+    background-color: #0077b6;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.catch-card a {
+    margin: 0 20px 20px;
+    padding: 10px 18px;
+    border-radius: 6px;
+}
+
+.catch-card a:hover,
+.catch-more a:hover,
+.price-reserve a:hover,
+.reserve-button:hover {
+    background-color: #005f8f;
+    transform: translateY(-3px);
+}
+
+.catch-more {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.catch-more a {
+    padding: 12px 28px;
+    border-radius: 8px;
+}
+
+/* =========================
+   Catch page
+========================= */
+
+.catch-modern-hero {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #e8f4f8;
+}
+
+.catch-modern-hero h2 {
+    margin: 10px 0 20px;
+    font-size: clamp(45px, 6vw, 72px);
+    letter-spacing: 0.08em;
+}
+
+.catch-modern-hero p:not(.section-label) {
+    color: #666;
+}
+
+
+/* Catch list */
+
+.catch-page {
+    padding: 120px 20px;
+    background-color: #f5f7f8;
+}
+
+.catch-page-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto 50px;
+}
+
+.catch-page-heading h2 {
+    margin: 10px 0 0;
+    font-size: clamp(38px, 5vw, 56px);
+}
+
+.catch-page-heading>p {
+    max-width: 350px;
+    margin: 0;
+    color: #777;
+    line-height: 1.8;
+}
+
+
+/* JavaScriptで作られるカード */
+
+.catch-page-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.catch-page-list .catch-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    background-color: white;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: none;
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.catch-page-list .catch-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+}
+
+.catch-page-list .catch-card img {
+    display: block;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 0;
+    transition: transform 0.6s ease;
+}
+
+.catch-page-list .catch-card:hover img {
+    transform: scale(1.05);
+}
+
+.catch-page-list .catch-card h3 {
+    margin: 22px 22px 8px;
+    font-size: 19px;
+    line-height: 1.6;
+}
+
+.catch-page-list .catch-card p {
+    margin: 0 22px 15px;
+    color: #888;
+    font-size: 13px;
+}
+
+.catch-page-list .catch-card a {
+    align-self: flex-start;
+    margin: auto 22px 22px;
+    padding: 10px 0;
+
+    background: none;
+    color: #333;
+
+    border-radius: 0;
+    border-bottom: 1px solid #333;
+
+    text-decoration: none;
+}
+
+.catch-page-list .catch-card a:hover {
+    background: none;
+    color: #0077b6;
+}
+
+
+/* Blog CTA */
+
+.catch-blog-cta {
+    padding: 120px 20px;
+    background-color: #0d2733;
+    color: white;
+}
+
+.catch-blog-cta h2 {
+    max-width: 1000px;
+    margin: 15px auto 25px;
+
+    font-size: clamp(42px, 5vw, 62px);
+    line-height: 1.3;
+}
+
+.catch-blog-cta p:not(.section-label) {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 2;
+}
+
+.catch-blog-cta .section-label {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+
+    color: #70c7e8;
+}
+
+/* =========================
+   CATCH PAGE
+========================= */
+
+.catch-modern-card {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    background: white;
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+
+.catch-modern-image {
+    height: 240px;
+    overflow: hidden;
+    background: #f0f2f3;
+}
+
+.catch-modern-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.catch-modern-card:hover .catch-modern-image img {
+    transform: scale(1.04);
+}
+
+.catch-no-image {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.catch-modern-content {
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.catch-modern-date {
+    margin: 0 0 12px;
+    font-size: 12px;
+    color: #888;
+    letter-spacing: 1px;
+}
+
+.catch-modern-content h3 {
+    margin: 0 0 25px;
+    font-size: 26px;
+}
+
+.catch-modern-content .section-button {
+    display: inline-block;
+}
+
+.catch-error {
+    padding: 50px 20px;
+    text-align: center;
+    color: #777;
+}
+
+/* Price */
+.price {
+    text-align: center;
+    padding: 70px 20px;
+    background-color: white;
+}
+
+.price p {
+    line-height: 1.8;
+}
+
+.price-section {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.price-section>h2,
+.reserve-section>h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.price-list {
+    display: flex;
+    gap: 30px;
+}
+
+.price-card {
+    flex: 1;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.price-card h3 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.price-value {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.price-card p:last-child {
+    line-height: 1.8;
+    color: #666;
+}
+
+.price-notes {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.price-notes h2 {
+    text-align: center;
+}
+
+.price-notes ul {
+    line-height: 2;
+}
+
+.price-reserve {
+    text-align: center;
+    background-color: #e8f4f8;
+}
+
+.price-reserve a {
+    margin-top: 15px;
+    padding: 12px 25px;
+    border-radius: 8px;
+}
+
+/* =========================
+   Price page
+========================= */
+
+.price-page {
+    padding: 120px 20px;
+    background-color: white;
+}
+
+.price-page-heading {
+    max-width: 1000px;
+    margin: 0 auto 50px;
+}
+
+.price-page-heading h2 {
+    margin: 10px 0 15px;
+    font-size: clamp(38px, 5vw, 56px);
+}
+
+.price-page-heading p:not(.section-label) {
+    color: #777;
+}
+
+.price-modern-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.price-modern-card {
+    display: grid;
+    grid-template-columns: 70px 1fr auto;
+    align-items: center;
+    gap: 30px;
+    padding: 30px 35px;
+    background-color: #f5f7f8;
+    border-left: 4px solid #0077b6;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.price-modern-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+.price-modern-number {
+    color: #0077b6;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.price-modern-content span {
+    color: #0077b6;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.price-modern-content h3 {
+    margin: 7px 0;
+    font-size: 22px;
+}
+
+.price-modern-content p {
+    margin: 0;
+    color: #777;
+}
+
+.price-modern-card>strong {
+    font-size: 28px;
+}
+
+
+/* Price information */
+
+.price-info {
+    padding: 100px 20px;
+    background-color: #f5f7f8;
+}
+
+.price-info-inner {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 80px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.price-info h2 {
+    margin-top: 10px;
+    font-size: 42px;
+}
+
+.price-info-list {
+    border-top: 1px solid #ddd;
+}
+
+.price-info-list div {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.price-info-list span {
+    color: #0077b6;
+    font-size: 12px;
+}
+
+.price-info-list p {
+    margin: 0;
+    color: #666;
+    line-height: 1.7;
+}
+
+
+/* Price CTA */
+
+.price-cta {
+    padding: 110px 20px;
+    background-color: #0d2733;
+    color: white;
+    text-align: center;
+}
+
+.price-cta .section-label {
+    color: #70c7e8;
+}
+
+.price-cta h2 {
+    margin: 15px 0 25px;
+    font-size: clamp(38px, 5vw, 56px);
+    line-height: 1.3;
+}
+
+.price-cta p:not(.section-label) {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.price-cta-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.price-cta-sub {
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    padding-bottom: 5px;
+}
+
+/* =========================
+   PRICE PAGE
+========================= */
+
+.price-hero {
+    padding: 110px 20px 80px;
+    text-align: center;
+    background: #f5f7f8;
+}
+
+.price-hero h2 {
+    font-size: 48px;
+    margin: 15px 0;
+}
+
+.price-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 90px 20px;
+}
+
+.price-heading {
+    margin-bottom: 45px;
+}
+
+.price-heading h2 {
+    font-size: 38px;
+    margin: 10px 0;
+}
+
+.price-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.price-card {
+    position: relative;
+    padding: 35px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+}
+
+.price-card-number {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #888;
+}
+
+.price-card h3 {
+    margin: 20px 0 15px;
+    font-size: 22px;
+}
+
+.price-card strong {
+    display: block;
+    font-size: 28px;
+}
+
+.price-card p {
+    margin-top: 12px;
+    color: #777;
+}
+
+.price-note {
+    margin-top: 30px;
+    padding: 25px;
+    background: #f5f7f8;
+}
+
+.price-note p {
+    margin-bottom: 0;
+}
+
+.rental-page {
+    padding: 90px 20px;
+    background: #f5f7f8;
+}
+
+.rental-page .price-heading,
+.rental-grid {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.rental-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.rental-card {
+    padding: 35px;
+    background: #fff;
+}
+
+.rental-card>span {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #888;
+}
+
+.rental-card h3 {
+    margin: 15px 0;
+}
+
+.rental-card strong {
+    font-size: 28px;
+}
+
+.student-price {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.student-price h2 {
+    font-size: 38px;
+    margin: 15px 0;
+}
+
+.student-price strong {
+    display: block;
+    font-size: 42px;
+}
+
+.price-preparation {
+    padding: 90px 20px;
+    background: #f5f7f8;
+}
+
+.price-preparation>.section-label,
+.price-preparation>h2 {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.preparation-grid {
+    max-width: 1100px;
+    margin: 40px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.preparation-grid>div {
+    padding: 30px;
+    background: #fff;
+}
+
+.preparation-grid h3 {
+    margin-top: 0;
+}
+
+.price-cta {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+/* Reserve */
+.reserve {
+    text-align: center;
+    padding: 70px 20px;
+    background-color: #e8f4f8;
+}
+
+.reserve-section {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.reserve-list {
+    display: flex;
+    gap: 30px;
+}
+
+.reserve-card {
+    flex: 1;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.reserve-card h3 {
+    font-size: 24px;
+    margin-top: 0;
+}
+
+.reserve-card p {
+    line-height: 1.8;
+}
+
+.reserve-status {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: #e8f4f8;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.reserve-button {
+    margin-top: 15px;
+    padding: 12px 25px;
+    border-radius: 8px;
+}
+
+.reserve-info {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.reserve-info p {
+    line-height: 1.8;
+}
+
+.reserve-info ul {
+    line-height: 2;
+    text-align: left;
+}
+
+.reserve-info .reserve-button {
+    margin: 10px;
+}
+
+/* =========================
+   Reservation page
+========================= */
+
+.reservation-guide {
+    padding: 120px 20px;
+    background-color: white;
+}
+
+.reservation-guide-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.reservation-guide-heading {
+    max-width: 600px;
+    margin-bottom: 60px;
+}
+
+.reservation-guide-heading h2 {
+    margin: 10px 0 20px;
+    font-size: clamp(38px, 5vw, 56px);
+}
+
+.reservation-guide-heading>p:not(.section-label) {
+    color: #666;
+    line-height: 1.9;
+}
+
+.reservation-steps {
+    border-top: 1px solid #ddd;
+}
+
+.reservation-step {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 30px;
+    padding: 30px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.reservation-step>span {
+    color: #0077b6;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.reservation-step h3 {
+    margin: 0 0 10px;
+    font-size: 22px;
+}
+
+.reservation-step p {
+    margin: 0;
+    color: #777;
+    line-height: 1.8;
+}
+
+
+/* Reservation method */
+
+.reservation-method {
+    padding: 120px 20px;
+    background-color: #f5f7f8;
+}
+
+.reservation-method-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.reservation-method-inner>h2 {
+    margin: 10px 0 40px;
+    font-size: clamp(38px, 5vw, 56px);
+}
+
+.reservation-method-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 45px;
+    background-color: white;
+    border-left: 4px solid #0077b6;
+}
+
+.reservation-method-card span {
+    color: #0077b6;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.reservation-method-card h3 {
+    margin: 10px 0;
+    font-size: 28px;
+}
+
+.reservation-method-card p {
+    margin: 0;
+    color: #777;
+    line-height: 1.8;
+}
+
+.reservation-main-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    padding: 14px 22px;
+    background-color: #0077b6;
+    color: white;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.reservation-main-button:hover {
+    background-color: #005f8f;
+    transform: translateX(5px);
+}
+
+
+/* Reservation note */
+
+.reservation-note {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 100px 20px;
+}
+
+.reservation-note h2 {
+    margin: 10px 0 30px;
+    font-size: 36px;
+}
+
+.reservation-note ul {
+    margin: 0;
+    padding-left: 20px;
+    line-height: 2.2;
+    color: #666;
+}
+
+
+/* Final CTA */
+
+.reservation-final {
+    padding: 100px 20px;
+    background-color: #0d2733;
+    color: white;
+    text-align: center;
+}
+
+.reservation-final .section-label {
+    color: #70c7e8;
+}
+
+.reservation-final h2 {
+    margin: 15px 0 20px;
+    font-size: clamp(38px, 5vw, 56px);
+}
+
+.reservation-final p:not(.section-label) {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* =========================
+   RESERVATION PAGE
+========================= */
+
+.reserve-hero {
+    padding: 110px 20px 80px;
+    text-align: center;
+    background: #f5f7f8;
+}
+
+.reserve-hero h2 {
+    font-size: 48px;
+    margin: 15px 0;
+}
+
+.reserve-phone {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.reserve-phone h2 {
+    font-size: 38px;
+    margin: 15px 0;
+}
+
+.reserve-phone-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 35px;
+    padding: 22px 40px;
+    background: #111;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.reserve-phone-button:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+.reserve-phone-button span {
+    font-size: 30px;
+}
+
+.reserve-phone-button small {
+    display: block;
+    text-align: left;
+    font-size: 11px;
+    opacity: 0.7;
+}
+
+.reserve-phone-button strong {
+    display: block;
+    font-size: 27px;
+    letter-spacing: 1px;
+}
+
+.reserve-note {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #777;
+}
+
+.reserve-flow {
+    padding: 90px 20px;
+    background: #f5f7f8;
+}
+
+.reserve-heading {
+    max-width: 1100px;
+    margin: 0 auto 45px;
+}
+
+.reserve-heading h2 {
+    font-size: 38px;
+    margin-top: 10px;
+}
+
+.reserve-flow-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.reserve-flow-grid article {
+    padding: 30px;
+    background: white;
+}
+
+.reserve-flow-grid span,
+.reserve-important-grid span {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #888;
+}
+
+.reserve-flow-grid h3 {
+    margin: 18px 0 12px;
+}
+
+.reserve-flow-grid p {
+    color: #666;
+    line-height: 1.8;
+}
+
+.reserve-beginner {
+    padding: 100px 20px;
+}
+
+.reserve-beginner>div {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.reserve-beginner h2 {
+    font-size: 42px;
+    margin: 15px 0 25px;
+}
+
+.reserve-beginner p {
+    max-width: 600px;
+    line-height: 2;
+}
+
+.reserve-beginner .section-button {
+    display: inline-block;
+    margin-top: 25px;
+}
+
+.reserve-important {
+    padding: 90px 20px;
+    background: #f5f7f8;
+}
+
+.reserve-important>h2,
+.reserve-important>.section-label {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.reserve-important>h2 {
+    font-size: 38px;
+    margin-top: 10px;
+}
+
+.reserve-important-grid {
+    max-width: 1100px;
+    margin: 45px auto 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.reserve-important-grid>div {
+    padding: 30px;
+    background: white;
+}
+
+.reserve-important-grid h3 {
+    margin: 18px 0 12px;
+}
+
+.reserve-important-grid p {
+    color: #666;
+    line-height: 1.8;
+}
+
+.reserve-cta {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.reserve-cta h2 {
+    font-size: 38px;
+    margin: 15px 0;
+}
+
+/* Schedule */
+.schedule-section {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.schedule-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.schedule-card {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 25px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-date {
+    min-width: 150px;
+    text-align: center;
+}
+
+.schedule-date p {
+    margin: 0 0 5px;
+}
+
+.schedule-date h3 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.schedule-info {
+    flex: 1;
+}
+
+.schedule-info p {
+    margin: 8px 0;
+}
+
+.schedule-button {
+    padding: 10px 18px;
+    background-color: #0077b6;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    white-space: nowrap;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.schedule-button:hover {
+    background-color: #005f8f;
+    transform: translateY(-3px);
+}
+
+.schedule-status {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 12px;
+    background-color: #e8f4f8;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* =========================
+   Schedule page
+========================= */
+
+.schedule-page {
+    padding: 120px 20px;
+    background-color: white;
+}
+
+.schedule-page-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto 50px;
+}
+
+.schedule-page-heading h2 {
+    margin: 10px 0 0;
+    font-size: clamp(38px, 5vw, 56px);
+}
+
+.schedule-page-heading>p {
+    max-width: 350px;
+    margin: 0;
+    color: #777;
+    line-height: 1.8;
+}
+
+.schedule-page-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.schedule-modern-card {
+    display: grid;
+    grid-template-columns: 170px 1fr auto;
+    align-items: center;
+    gap: 40px;
+    padding: 35px;
+    background-color: #f5f7f8;
+    border-left: 4px solid #0077b6;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.schedule-modern-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+.schedule-modern-date span,
+.schedule-modern-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #0077b6;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.schedule-modern-date strong {
+    display: block;
+    font-size: 42px;
+    line-height: 1;
+}
+
+.schedule-modern-date small {
+    display: block;
+    margin-top: 10px;
+    color: #888;
+}
+
+.schedule-modern-content h3 {
+    margin: 5px 0 20px;
+    font-size: 22px;
+}
+
+.schedule-modern-info {
+    display: flex;
+    gap: 30px;
+}
+
+.schedule-modern-info p {
+    margin: 0;
+    color: #666;
+}
+
+.schedule-modern-info span {
+    margin-right: 8px;
+    color: #222;
+    font-weight: bold;
+}
+
+.schedule-modern-action {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+.schedule-status {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: #e3f2f7;
+    border-radius: 20px;
+    color: #0077b6;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.schedule-modern-action .schedule-button {
+    display: inline-block;
+    padding: 12px 18px;
+}
+
+
+/* Notes */
+
+.schedule-notes {
+    padding: 100px 20px;
+    background-color: #f5f7f8;
+}
+
+.schedule-notes>.section-label,
+.schedule-notes>h2 {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.schedule-notes h2 {
+    margin-top: 10px;
+    margin-bottom: 50px;
+    font-size: 42px;
+}
+
+.schedule-notes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #ddd;
+}
+
+.schedule-notes-grid>div {
+    padding: 35px;
+    background-color: white;
+}
+
+.schedule-notes-grid span {
+    color: #0077b6;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.schedule-notes-grid h3 {
+    margin: 15px 0 10px;
+    font-size: 20px;
+}
+
+.schedule-notes-grid p {
+    margin: 0;
+    color: #777;
+    line-height: 1.8;
+}
+
+
+/* CTA */
+
+.schedule-cta {
+    padding: 100px 20px;
+    background-color: #0d2733;
+    color: white;
+    text-align: center;
+}
+
+.schedule-cta .section-label {
+    color: #70c7e8;
+}
+
+.schedule-cta h2 {
+    margin: 15px 0 20px;
+    font-size: clamp(38px, 5vw, 56px);
+}
+
+.schedule-cta p:not(.section-label) {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.schedule-cta .section-button {
+    margin-top: 25px;
+}
+
+/* =========================
+   Access page
+========================= */
+
+.access-hero {
+    padding: 90px 20px;
+    text-align: center;
+    background-color: #e8f4f8;
+}
+
+.access-hero h2 {
+    margin: 10px 0 15px;
+    font-size: clamp(40px, 5vw, 60px);
+}
+
+.access-hero p:not(.section-label) {
+    color: #666;
+}
+
+
+/* Location */
+
+.access-main {
+    padding: 120px 20px;
+    background-color: white;
+}
+
+.access-main-inner {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: center;
+    gap: 70px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.access-heading h2,
+.access-map-heading h2 {
+    margin: 10px 0 20px;
+    font-size: clamp(38px, 5vw, 56px);
+}
+
+.access-heading p:not(.section-label),
+.access-map-heading p:not(.section-label) {
+    color: #777;
+    line-height: 1.8;
+}
+
+.access-location-card {
+    padding: 40px;
+    background-color: #f5f7f8;
+    border-left: 4px solid #0077b6;
+}
+
+.access-location-top {
+    padding-bottom: 25px;
+    border-bottom: 1px solid #ddd;
+}
+
+.access-location-top span {
+    display: block;
+    margin-bottom: 10px;
+    color: #0077b6;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.access-location-top strong {
+    font-size: 32px;
+}
+
+.access-location-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 25px;
+}
+
+.access-location-info div {
+    padding: 0 20px;
+    border-right: 1px solid #ddd;
+}
+
+.access-location-info div:first-child {
+    padding-left: 0;
+}
+
+.access-location-info div:last-child {
+    border-right: none;
+}
+
+.access-location-info span {
+    display: block;
+    margin-bottom: 8px;
+    color: #777;
+    font-size: 12px;
+}
+
+.access-location-info p {
+    margin: 0;
+    font-weight: bold;
+}
+
+
+/* Map */
+
+.access-map-section {
+    padding: 100px 20px;
+    background-color: #f5f7f8;
+}
+
+.access-map-inner {
+    display: grid;
+    grid-template-columns: 0.7fr 1.3fr;
+    align-items: center;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.access-map-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 380px;
+    background-color: #dfe8eb;
+    text-align: center;
+}
+
+.access-map-placeholder div {
+    padding: 30px;
+}
+
+.access-map-placeholder span {
+    display: block;
+    margin-bottom: 10px;
+    color: #0077b6;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.access-map-placeholder strong {
+    display: block;
+    font-size: 28px;
+}
+
+.access-map-placeholder p {
+    color: #777;
+    line-height: 1.7;
+}
+
+.access-map {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.access-map iframe {
+    display: block;
+    width: 100%;
+    height: 400px;
+    border: 0;
+}
+
+
+/* Guide */
+
+.access-guide {
+    padding: 110px 20px;
+    background-color: white;
+}
+
+.access-guide>.section-label,
+.access-guide>h2 {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.access-guide h2 {
+    margin-top: 10px;
+    margin-bottom: 50px;
+    font-size: 42px;
+}
+
+.access-guide-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #ddd;
+}
+
+.access-guide-grid>div {
+    padding: 35px;
+    background-color: white;
+}
+
+.access-guide-grid span {
+    color: #0077b6;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.access-guide-grid h3 {
+    margin: 15px 0 10px;
+    font-size: 20px;
+}
+
+.access-guide-grid p {
+    margin: 0;
+    color: #777;
+    line-height: 1.8;
+}
+
+
+/* CTA */
+
+.access-cta {
+    padding: 110px 20px;
+    background-color: #0d2733;
+    color: white;
+    text-align: center;
+}
+
+.access-cta .section-label {
+    color: #70c7e8;
+}
+
+.access-cta h2 {
+    margin: 15px 0 25px;
+    font-size: clamp(38px, 5vw, 56px);
+    line-height: 1.3;
+}
+
+.access-cta p:not(.section-label) {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.access-cta-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.access-cta-sub {
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    padding-bottom: 5px;
+}
+
+/* =========================
+   Real Access Information
+========================= */
+
+.parking-section {
+    padding: 110px 20px;
+    background-color: #f5f7f8;
+}
+
+.parking-inner {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.parking-inner h2 {
+    margin: 10px 0 20px;
+    font-size: 48px;
+}
+
+.parking-inner>div:first-child p:last-child {
+    color: #777;
+    line-height: 1.9;
+}
+
+.parking-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background-color: #ddd;
+}
+
+.parking-price {
+    padding: 35px 25px;
+    background-color: white;
+}
+
+.parking-price span {
+    display: block;
+    margin-bottom: 10px;
+    color: #0077b6;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.parking-price strong {
+    font-size: 38px;
+}
+
+.parking-card>p {
+    grid-column: 1 / -1;
+    margin: 0;
+    padding: 20px;
+    background-color: white;
+    color: #777;
+    font-size: 13px;
+}
+
+
+/* Map */
+
+.access-map-area {
+    width: 100%;
+}
+
+.access-map-placeholder {
+    min-height: 400px;
+}
+
+.map-note {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 15px;
+    gap: 1px;
+    background-color: #ddd;
+}
+
+.map-note div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px;
+    background-color: white;
+}
+
+.map-note span {
+    color: #0077b6;
+    font-size: 11px;
+}
+
+.map-note p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.map-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 13px 22px;
+    background-color: #0077b6;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.3s ease;
+}
+
+.map-button:hover {
+    background-color: #005f8f;
+    transform: translateY(-2px);
+}
+
+.access-map-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    background-color: #e8f4f8;
+    text-align: center;
+}
+
+.access-map-placeholder span {
+    margin-bottom: 15px;
+    color: #0077b6;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.access-map-placeholder strong {
+    font-size: 28px;
+}
+
+.access-map-placeholder p {
+    color: #666;
+    line-height: 1.8;
+}
+
+
+/* Departure */
+
+.access-departure {
+    padding: 110px 20px;
+    background-color: white;
+}
+
+.access-departure-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.access-departure h2 {
+    margin: 10px 0 50px;
+    font-size: 48px;
+}
+
+.departure-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background-color: #ddd;
+}
+
+.departure-list>div {
+    padding: 35px;
+    background-color: white;
+}
+
+.departure-list span {
+    color: #0077b6;
+    font-size: 11px;
+}
+
+.departure-list h3 {
+    margin: 15px 0 10px;
+    font-size: 21px;
+}
+
+.departure-list p {
+    margin: 0;
+    color: #777;
+    line-height: 1.8;
+}
+
+/* =========================
+   ACCESS PAGE
+========================= */
+
+.access-hero {
+    padding: 110px 20px 80px;
+    text-align: center;
+    background: #f5f7f8;
+}
+
+.access-hero h2 {
+    font-size: 48px;
+    margin: 15px 0;
+}
+
+.access-location {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.access-location-text h2 {
+    font-size: 38px;
+    margin: 10px 0 25px;
+}
+
+.access-lead {
+    font-size: 18px;
+    line-height: 2;
+}
+
+.access-info {
+    margin-top: 40px;
+    display: grid;
+    gap: 20px;
+}
+
+.access-info div {
+    padding: 20px;
+    background: #f5f7f8;
+}
+
+.access-info span {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #888;
+    margin-bottom: 8px;
+}
+
+.access-info strong {
+    font-size: 17px;
+}
+
+.access-map {
+    min-height: 420px;
+}
+
+.access-map-placeholder {
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #e9eef0;
+    text-align: center;
+}
+
+.access-map-placeholder span,
+.ice-map-placeholder span {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #777;
+}
+
+.access-map-placeholder strong,
+.ice-map-placeholder strong {
+    margin-top: 15px;
+    font-size: 24px;
+}
+
+.access-map-placeholder p,
+.ice-map-placeholder p {
+    color: #777;
+}
+
+.access-parking {
+    padding: 90px 20px;
+    background: #f5f7f8;
+}
+
+.access-parking>* {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.access-parking h2 {
+    font-size: 38px;
+    margin-top: 10px;
+}
+
+.access-section-lead {
+    margin-bottom: 40px;
+}
+
+.parking-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.parking-price {
+    padding: 35px;
+    background: white;
+}
+
+.parking-price span {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #888;
+}
+
+.parking-price strong {
+    display: block;
+    margin-top: 15px;
+    font-size: 36px;
+}
+
+.access-note {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #777;
+}
+
+
+
+/* =========================
+   ICE
+========================= */
+
+.access-ice {
+    padding: 100px 8%;
+}
+
+.access-ice-heading {
+    max-width: 700px;
+    margin-bottom: 50px;
+}
+
+.ice-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.ice-card {
+    background-color: #f5f5f5;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.ice-card-content {
+    padding: 35px 40px 30px;
+}
+
+.ice-card-content h3 {
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+.ice-card-content>p:not(.section-label) {
+    line-height: 1.8;
+}
+
+.ice-info {
+    display: flex;
+    gap: 50px;
+    margin-top: 25px;
+}
+
+.ice-info div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.ice-info span {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: #888;
+}
+
+.ice-info strong {
+    font-size: 14px;
+}
+
+.ice-map {
+    width: 100%;
+}
+
+.ice-map iframe {
+    display: block;
+    width: 100%;
+    height: 320px;
+    border: 0;
+}
+
+.access-arrival {
+    padding: 90px 20px;
+    background: #f5f7f8;
+}
+
+.access-arrival>* {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.access-arrival h2 {
+    font-size: 38px;
+    margin-top: 10px;
+}
+
+.arrival-grid {
+    margin-top: 45px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.arrival-grid>div {
+    padding: 30px;
+    background: white;
+}
+
+.arrival-grid span {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #888;
+}
+
+.arrival-grid h3 {
+    margin: 18px 0 12px;
+}
+
+.arrival-grid p {
+    color: #666;
+    line-height: 1.8;
+}
+
+.access-map-notice {
+    padding: 90px 20px;
+    text-align: center;
+}
+
+.access-map-notice h2 {
+    font-size: 38px;
+    margin: 15px 0;
+}
+
+.access-map-notice p {
+    max-width: 650px;
+    margin: 10px auto;
+    line-height: 1.9;
+    color: #666;
+}
+
+.access-cta {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.access-cta h2 {
+    font-size: 38px;
+    margin: 15px 0;
+}
+
+/* Card hover */
+.fishing-card,
+.catch-card,
+.schedule-card,
+.price-card,
+.reserve-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fishing-card:hover,
+.catch-card:hover,
+.schedule-card:hover,
+.price-card:hover,
+.reserve-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+.fade-in,
+.slide-up,
+.slide-left,
+.slide-right {
+    opacity: 0;
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+
+/* 下から */
+
+.slide-up {
+    transform: translateY(40px);
+}
+
+
+/* 左から */
+
+.slide-left {
+    transform: translateX(-50px);
+}
+
+
+/* 右から */
+
+.slide-right {
+    transform: translateX(50px);
+}
+
+
+/* 表示 */
+
+.fade-in.show,
+.slide-up.show,
+.slide-left.show,
+.slide-right.show {
+    opacity: 1;
+    transform: translate(0);
+}

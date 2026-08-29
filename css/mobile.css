@@ -1,0 +1,1486 @@
+@media (max-width: 768px) {
+    header h1 {
+        margin: 0;
+        font-size: 28px;
+    }
+
+    .header-inner {
+        justify-content: space-between;
+    }
+
+    .menu-button {
+        display: block;
+        font-size: 24px;
+        padding: 4px 8px;
+    }
+
+    #main-nav {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        margin-top: 10px;
+        padding: 5px 0;
+    }
+
+    #main-nav.open {
+        display: flex;
+    }
+
+    #main-nav a {
+        padding: 8px 10px;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .hero {
+        height: 520px;
+    }
+
+    .hero-content {
+        bottom: 60px;
+        left: 50%;
+        width: calc(100% - 40px);
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .hero-content h2 {
+        font-size: 48px;
+    }
+
+    .hero-content p {
+        font-size: 17px;
+    }
+
+    .hero-links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 40px 15px;
+    }
+
+    .hero-link-card {
+        min-height: 110px;
+        padding: 22px;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .hero-link-card:last-child {
+        border-bottom: none;
+    }
+
+    .hero-link-content span {
+        font-size: 21px;
+    }
+
+    .hero-link-number {
+        margin-right: 18px;
+    }
+
+    /* =========================
+   VISUAL STORY - MOBILE
+========================= */
+
+    .visual-story {
+        display: block;
+        margin: 80px auto;
+        padding: 0 20px;
+    }
+
+    .visual-story-image {
+        margin-bottom: 40px;
+    }
+
+    .visual-story-image img {
+        height: 380px;
+    }
+
+    .visual-story-content {
+        max-width: none;
+    }
+
+    .visual-story-content h2 {
+        font-size: 32px;
+        margin: 15px 0 25px;
+    }
+
+    .visual-story-content p {
+        line-height: 1.9;
+    }
+
+    .visual-story-content .section-button {
+        margin-top: 25px;
+    }
+
+    /* =========================
+   VISUAL STORY ANIMATION - MOBILE
+========================= */
+
+    .visual-story.fade-in {
+        opacity: 0;
+        transform: translateY(40px);
+        transition:
+            opacity 0.8s ease,
+            transform 0.8s ease;
+    }
+
+    .visual-story.fade-in.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+
+    .visual-story.fade-in .visual-story-image img {
+        transform: scale(1.05);
+        transition: transform 1s ease;
+    }
+
+    .visual-story.fade-in.show .visual-story-image img {
+        transform: scale(1);
+    }
+
+
+    .next-schedule {
+        padding: 60px 16px;
+    }
+
+    .next-schedule-heading {
+        display: block;
+    }
+
+    .next-schedule-heading .section-button {
+        display: inline-block;
+        margin-top: 20px;
+    }
+
+    .next-schedule-card {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 22px;
+    }
+
+    .next-schedule-date strong {
+        font-size: 36px;
+    }
+
+    /* =========================
+   PHOTO GALLERY - MOBILE
+========================= */
+
+    .photo-gallery {
+        margin: 80px auto;
+        padding: 0 20px;
+    }
+
+    .photo-gallery-heading {
+        margin-bottom: 35px;
+    }
+
+    .photo-gallery-heading h2 {
+        font-size: 32px;
+        margin: 12px 0 18px;
+    }
+
+    .photo-gallery-heading p {
+        line-height: 1.9;
+    }
+
+    .photo-gallery-grid {
+        display: block;
+    }
+
+    .photo-gallery-item {
+        height: 280px;
+        margin-bottom: 15px;
+    }
+
+    .photo-gallery-large {
+        height: 360px;
+    }
+
+
+
+    .about-section {
+        padding: 70px 20px;
+    }
+
+    .about-inner {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .about-image-wrap img {
+        height: 420px;
+    }
+
+    .about-image-label {
+        right: 15px;
+        bottom: 20px;
+    }
+
+    .about-section .about-text {
+        max-width: none;
+    }
+
+    .about-section .about-text h2 {
+        font-size: 38px;
+    }
+
+    .about-lead {
+        font-size: 19px !important;
+    }
+
+    .about-modern-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .about-modern-hero-image img {
+        min-height: 400px;
+        height: 400px;
+    }
+
+    .about-modern-hero-content {
+        padding: 60px 25px;
+    }
+
+    .about-modern-hero-content h2 {
+        font-size: 42px;
+    }
+
+    .about-story {
+        padding: 80px 20px;
+    }
+
+    .about-story-inner {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-story-heading h2 {
+        font-size: 42px;
+    }
+
+    /* =========================
+   ABOUT STORY IMAGE MOBILE
+========================= */
+
+
+    .about-story-image img {
+        height: 380px;
+    }
+
+    .about-story-content {
+        gap: 25px;
+    }
+
+
+
+    .about-feature {
+        grid-template-columns: 1fr;
+    }
+
+    .about-feature-image img {
+        height: 400px;
+    }
+
+    .about-feature-content {
+        padding: 60px 25px;
+    }
+
+    .about-message {
+        padding: 90px 20px;
+    }
+
+    .about-message h2 {
+        font-size: 40px;
+    }
+
+    .about-profile {
+        padding: 80px 20px;
+    }
+
+    .about-profile-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-profile h2 {
+        font-size: 40px;
+    }
+
+    .about-profile-list div {
+        grid-template-columns: 110px 1fr;
+    }
+
+    .about-cta {
+        padding: 80px 20px;
+    }
+
+    .about-cta-buttons {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+
+    .about-modern-hero {
+        padding: 80px 20px;
+    }
+
+    /* =========================
+   ABOUT EQUIPMENT MOBILE
+========================= */
+
+
+    .about-equipment {
+        padding: 70px 16px;
+    }
+
+    .about-equipment-heading {
+        margin-bottom: 35px;
+    }
+
+    .about-equipment-heading h2 {
+        font-size: 32px;
+    }
+
+    .about-equipment-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .equipment-image {
+        height: 240px;
+    }
+
+    .equipment-content {
+        padding: 24px;
+    }
+
+    .equipment-content h3 {
+        font-size: 20px;
+    }
+
+
+
+    .about-story {
+        padding: 80px 20px;
+    }
+
+    .about-story-inner {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-safety {
+        padding: 80px 20px;
+    }
+
+    .about-beginner {
+        padding: 80px 20px;
+    }
+
+    .about-beginner-inner {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-service {
+        padding: 80px 20px;
+    }
+
+    .about-service-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-service h2 {
+        font-size: 40px;
+    }
+
+    .about-cta {
+        padding: 80px 20px;
+    }
+
+
+
+    .catch-modern-hero {
+        padding: 70px 20px;
+    }
+
+    .catch-page {
+        padding: 80px 20px;
+    }
+
+    .catch-page-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .catch-page-heading h2 {
+        font-size: 38px;
+    }
+
+    .catch-page-list {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .catch-page-list .catch-card img {
+        height: 240px;
+    }
+
+    .catch-blog-cta {
+        padding: 80px 20px;
+    }
+
+    .catch-blog-cta h2 {
+        font-size: 42px;
+    }
+
+    .fishing-modern-hero {
+        padding: 70px 20px;
+    }
+
+    .fishing-intro {
+        padding: 80px 20px;
+    }
+
+    .fishing-intro-inner {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .fishing-modern-list {
+        padding: 80px 20px;
+    }
+
+    .fishing-list-heading h2 {
+        font-size: 38px;
+    }
+
+    .fishing-modern-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fishing-modern-image img {
+        height: 250px;
+    }
+
+    .fishing-season {
+        padding: 80px 20px;
+    }
+
+    .fishing-season-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .fishing-season h2 {
+        font-size: 38px;
+    }
+
+    .fishing-season-list>div {
+        padding: 20px 15px;
+    }
+
+    .fishing-cta {
+        padding: 80px 20px;
+    }
+
+    .fishing-cta-buttons {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .fishing-recommend {
+        padding: 80px 20px;
+    }
+
+    .fishing-recommend-inner {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .season-fishing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .season-fishing-card {
+        padding: 30px 25px;
+    }
+
+    .fishing-capacity {
+        padding: 80px 20px;
+    }
+
+    .fishing-capacity-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .fishing-capacity h2 {
+        font-size: 40px;
+    }
+
+    .capacity-list div {
+        gap: 15px;
+    }
+
+    .fishing-beginner {
+        padding: 80px 20px;
+    }
+
+    /* =========================
+   FISHING PAGE MOBILE
+========================= */
+
+
+    .fishing-hero {
+        padding: 80px 20px 60px;
+    }
+
+    .fishing-hero h2 {
+        font-size: 38px;
+    }
+
+    .fishing-season {
+        padding: 70px 16px;
+    }
+
+    .fishing-season-heading h2 {
+        font-size: 32px;
+    }
+
+    .fishing-season-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .fishing-season-card {
+        min-height: auto;
+        padding: 28px;
+    }
+
+    .fishing-season-card h3 {
+        font-size: 28px;
+    }
+
+    .fishing-popular {
+        padding: 65px 16px;
+    }
+
+    .fishing-popular-heading h2 {
+        font-size: 32px;
+    }
+
+    .fishing-popular-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fishing-popular-grid article {
+        padding: 28px;
+    }
+
+    .fishing-popular-grid h3 {
+        font-size: 24px;
+    }
+
+    .fishing-types {
+        padding: 70px 16px;
+    }
+
+    .fishing-types>h2 {
+        font-size: 32px;
+    }
+
+    .fishing-type-list {
+        grid-template-columns: 1fr;
+        margin-top: 30px;
+    }
+
+    .fishing-type-list>div {
+        padding: 28px;
+    }
+
+    .fishing-cta {
+        padding: 75px 20px;
+    }
+
+    .fishing-cta h2 {
+        font-size: 32px;
+    }
+
+    /* =========================
+   FISHING SEASON MOBILE
+========================= */
+
+    .fishing-season-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .fishing-season-card {
+        width: 100%;
+    }
+
+    .fishing-season-image {
+        aspect-ratio: 16 / 10;
+    }
+
+    .fishing-season-content {
+        padding-top: 20px;
+    }
+
+    .fishing-season-content h3 {
+        font-size: 26px;
+        margin: 6px 0 12px;
+    }
+
+    .fishing-season-main {
+        font-size: 16px;
+    }
+
+    .fishing-season-content>p:last-child {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    /* ========================================
+   FISHING EQUIPMENT MOBILE
+======================================== */
+
+    .fishing-equipment {
+        padding: 75px 16px;
+    }
+
+    .fishing-equipment-heading {
+        margin-bottom: 40px;
+    }
+
+    .fishing-equipment-heading h2 {
+        font-size: 32px;
+        margin: 12px 0 18px;
+    }
+
+    .fishing-equipment-heading p:last-child {
+        font-size: 15px;
+        line-height: 1.9;
+    }
+
+
+    .fishing-equipment-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+
+    .fishing-equipment-grid article img {
+        height: 230px;
+    }
+
+
+    .fishing-equipment-grid article>div {
+        padding: 24px;
+    }
+
+
+    .fishing-equipment-grid article h3 {
+        font-size: 21px;
+    }
+
+
+    .fishing-equipment-grid article p {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    /* =========================
+   CATCH MOBILE
+========================= */
+
+    .catch-modern-card {
+        grid-template-columns: 1fr;
+    }
+
+    .catch-modern-image {
+        height: 230px;
+    }
+
+    .catch-modern-content {
+        padding: 25px;
+    }
+
+    .catch-modern-content h3 {
+        font-size: 22px;
+    }
+
+
+
+    .catch-section {
+        padding: 80px 20px;
+    }
+
+    .catch-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 35px;
+    }
+
+    .catch-heading h2 {
+        font-size: 38px;
+    }
+
+    .catch-heading-link {
+        font-size: 14px;
+    }
+
+    .catch-section .catch-list {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .catch-section .catch-card img {
+        height: 240px;
+    }
+
+    .schedule-preview {
+        padding: 80px 20px;
+    }
+
+    .schedule-preview-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .schedule-preview-heading h2 {
+        font-size: 38px;
+    }
+
+    .schedule-preview-card {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 30px 25px;
+    }
+
+    .schedule-preview-date {
+        text-align: left;
+    }
+
+    .schedule-preview-date strong {
+        font-size: 38px;
+    }
+
+    .schedule-preview-details {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .schedule-preview-button {
+        justify-content: center;
+    }
+
+    .schedule-page {
+        padding: 80px 20px;
+    }
+
+    .schedule-page-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .schedule-page-heading h2 {
+        font-size: 38px;
+    }
+
+    .schedule-modern-card {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 30px 25px;
+    }
+
+    .schedule-modern-date strong {
+        font-size: 38px;
+    }
+
+    .schedule-modern-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .schedule-modern-action {
+        align-items: stretch;
+    }
+
+    .schedule-modern-action .schedule-button {
+        text-align: center;
+    }
+
+    .schedule-notes {
+        padding: 80px 20px;
+    }
+
+    .schedule-notes h2 {
+        font-size: 36px;
+        margin-bottom: 35px;
+    }
+
+    .schedule-notes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .schedule-notes-grid>div {
+        padding: 30px 25px;
+    }
+
+    .schedule-cta {
+        padding: 80px 20px;
+    }
+
+    .price-preview {
+        padding: 80px 20px;
+    }
+
+    .price-preview-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .price-preview-heading h2 {
+        font-size: 38px;
+    }
+
+    .price-preview-card {
+        padding: 30px 25px;
+    }
+
+    .price-preview-main strong {
+        font-size: 40px;
+    }
+
+    .price-preview-items {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .price-preview-items div,
+    .price-preview-items div:first-child {
+        padding: 0 0 15px;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .price-preview-items div:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+
+    .price-page {
+        padding: 80px 20px;
+    }
+
+    .price-modern-card {
+        grid-template-columns: 45px 1fr;
+        gap: 15px;
+        padding: 25px 20px;
+    }
+
+    .price-modern-card>strong {
+        grid-column: 2;
+        font-size: 25px;
+    }
+
+    .price-info {
+        padding: 80px 20px;
+    }
+
+    .price-info-inner {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .price-info h2 {
+        font-size: 36px;
+    }
+
+    .price-cta {
+        padding: 80px 20px;
+    }
+
+    .price-cta-buttons {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .price-discount {
+        padding: 80px 20px;
+    }
+
+    .price-discount-inner {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .price-discount h2 {
+        font-size: 40px;
+    }
+
+    .price-discount-card {
+        padding: 30px 25px;
+    }
+
+    .price-discount-card strong {
+        font-size: 36px;
+    }
+
+    .rental-section {
+        padding: 80px 20px;
+    }
+
+    .rental-heading h2 {
+        font-size: 40px;
+    }
+
+    .rental-list {
+        grid-template-columns: 1fr;
+    }
+
+    .price-notes {
+        padding: 80px 20px;
+    }
+
+    .price-notes-inner h2 {
+        font-size: 40px;
+    }
+
+
+
+    .reservation-cta {
+        padding: 80px 20px;
+    }
+
+    .reservation-cta-inner {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .reservation-cta-heading h2 {
+        font-size: 42px;
+    }
+
+    .reservation-action {
+        grid-template-columns: 40px 1fr 25px;
+        gap: 12px;
+        padding: 20px 10px;
+    }
+
+    .reservation-action-text {
+        font-size: 17px;
+    }
+
+    .reservation-guide,
+    .reservation-method {
+        padding: 80px 20px;
+    }
+
+    .reservation-step {
+        grid-template-columns: 45px 1fr;
+        gap: 15px;
+    }
+
+    .reservation-step h3 {
+        font-size: 19px;
+    }
+
+    .reservation-method-inner>h2 {
+        font-size: 38px;
+    }
+
+    .reservation-method-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px 25px;
+    }
+
+    .reservation-main-button {
+        width: 100%;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+
+    .reservation-note {
+        padding: 70px 20px;
+    }
+
+    .reservation-final {
+        padding: 80px 20px;
+    }
+
+    .reservation-phone-card {
+        padding: 30px 25px;
+    }
+
+    .reservation-phone-card a {
+        font-size: 30px;
+    }
+
+    .reservation-beginner {
+        padding: 80px 20px;
+    }
+
+    .reservation-beginner-inner {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .reservation-beginner h2 {
+        font-size: 40px;
+    }
+
+    .reservation-cancel {
+        padding: 80px 20px;
+    }
+
+    .cancel-list {
+        grid-template-columns: 1fr;
+    }
+
+    .cancel-list>div {
+        padding: 25px;
+    }
+
+    .reservation-final-button {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 20px;
+    }
+
+    /* =========================
+   RESERVATION MOBILE
+========================= */
+
+
+
+    .reserve-hero {
+        padding: 80px 20px 60px;
+    }
+
+    .reserve-hero h2 {
+        font-size: 38px;
+    }
+
+    .reserve-phone {
+        padding: 70px 16px;
+    }
+
+    .reserve-phone h2 {
+        font-size: 30px;
+    }
+
+    .reserve-phone-button {
+        width: 100%;
+        box-sizing: border-box;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .reserve-phone-button strong {
+        font-size: 22px;
+    }
+
+    .reserve-flow {
+        padding: 65px 16px;
+    }
+
+    .reserve-heading h2 {
+        font-size: 32px;
+    }
+
+    .reserve-flow-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reserve-flow-grid article {
+        padding: 25px;
+    }
+
+    .reserve-beginner {
+        padding: 70px 20px;
+    }
+
+    .reserve-beginner h2 {
+        font-size: 34px;
+    }
+
+    .reserve-important {
+        padding: 65px 16px;
+    }
+
+    .reserve-important>h2 {
+        font-size: 32px;
+    }
+
+    .reserve-important-grid {
+        grid-template-columns: 1fr;
+        margin-top: 30px;
+    }
+
+    .reserve-important-grid>div {
+        padding: 25px;
+    }
+
+    .reserve-cta {
+        padding: 75px 20px;
+    }
+
+    .reserve-cta h2 {
+        font-size: 32px;
+    }
+
+
+
+    .access-hero {
+        padding: 70px 20px;
+    }
+
+    .access-main,
+    .access-map-section,
+    .access-guide {
+        padding: 80px 20px;
+    }
+
+    .access-main-inner,
+    .access-map-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .access-location-card {
+        padding: 30px 25px;
+    }
+
+    .access-location-top strong {
+        font-size: 28px;
+    }
+
+    .access-location-info {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .access-location-info div,
+    .access-location-info div:first-child {
+        padding: 0 0 15px;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .access-location-info div:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+
+    .access-map-placeholder {
+        min-height: 300px;
+    }
+
+    .access-guide h2 {
+        font-size: 36px;
+        margin-bottom: 35px;
+    }
+
+    .access-guide-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .access-guide-grid>div {
+        padding: 30px 25px;
+    }
+
+    .access-cta {
+        padding: 80px 20px;
+    }
+
+    .access-cta-buttons {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+
+    .parking-section {
+        padding: 80px 20px;
+    }
+
+    .parking-inner {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .parking-inner h2 {
+        font-size: 40px;
+    }
+
+    .parking-card {
+        grid-template-columns: 1fr;
+    }
+
+    .parking-card>p {
+        grid-column: auto;
+    }
+
+    .map-note {
+        grid-template-columns: 1fr;
+    }
+
+    .map-note div {
+        padding: 15px;
+    }
+
+    .access-departure {
+        padding: 80px 20px;
+    }
+
+    .access-departure h2 {
+        font-size: 40px;
+        margin-bottom: 35px;
+    }
+
+    .departure-list {
+        grid-template-columns: 1fr;
+    }
+
+    .departure-list>div {
+        padding: 30px 25px;
+    }
+
+    /* =========================
+   ACCESS MOBILE
+========================= */
+
+
+    .access-hero {
+        padding: 80px 20px 60px;
+    }
+
+    .access-hero h2 {
+        font-size: 38px;
+    }
+
+    .access-location {
+        padding: 65px 16px;
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .access-location-text h2 {
+        font-size: 32px;
+    }
+
+    .access-lead {
+        font-size: 16px;
+    }
+
+    .access-map {
+        min-height: 300px;
+    }
+
+    .access-map-placeholder {
+        height: 300px;
+    }
+
+    .access-map iframe {
+        height: 300px;
+    }
+
+    .access-parking {
+        padding: 65px 16px;
+    }
+
+    .access-parking h2 {
+        font-size: 32px;
+    }
+
+    .parking-card {
+        grid-template-columns: 1fr;
+    }
+
+    .parking-price {
+        padding: 28px;
+    }
+
+    .parking-price strong {
+        font-size: 32px;
+    }
+
+    .access-ice {
+        padding: 65px 16px;
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .access-ice h2 {
+        font-size: 32px;
+    }
+
+    .ice-map-placeholder {
+        min-height: 280px;
+    }
+
+
+    /* =========================
+   ICE
+========================= */
+
+    .access-ice {
+        padding: 70px 20px;
+    }
+
+    .ice-grid {
+        gap: 25px;
+    }
+
+    .ice-card-content {
+        padding: 25px;
+    }
+
+    .ice-card-content h3 {
+        font-size: 24px;
+    }
+
+    .ice-info {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .ice-map iframe {
+        height: 280px;
+    }
+
+    .ice-info div {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .ice-info strong {
+        text-align: left;
+    }
+
+
+
+    .access-arrival {
+        padding: 65px 16px;
+    }
+
+    .access-arrival h2 {
+        font-size: 32px;
+    }
+
+    .arrival-grid {
+        grid-template-columns: 1fr;
+        margin-top: 30px;
+    }
+
+    .arrival-grid>div {
+        padding: 25px;
+    }
+
+    .access-map-notice {
+        padding: 65px 20px;
+    }
+
+    .access-map-notice h2 {
+        font-size: 32px;
+    }
+
+    .access-cta {
+        padding: 75px 20px;
+    }
+
+    .access-cta h2 {
+        font-size: 32px;
+    }
+
+
+
+    .site-footer {
+        padding: 60px 20px 20px;
+    }
+
+    .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .footer-links {
+        gap: 25px;
+    }
+
+    .footer-bottom {
+        margin-top: 45px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-content img,
+    .about-image img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .fishing-list,
+    .price-list,
+    .reserve-list {
+        flex-direction: column;
+    }
+
+    .fishing-card,
+    .price-card,
+    .reserve-card {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .catch-list {
+        flex-direction: column;
+    }
+
+    .catch-card {
+        width: 100%;
+    }
+
+    .schedule-card {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .schedule-date {
+        text-align: left;
+    }
+
+    .schedule-button {
+        text-align: center;
+    }
+
+    .about-text h2 {
+        font-size: 28px;
+    }
+
+    .about-text p {
+        font-size: 16px;
+    }
+
+    .about-hero h2,
+    .fishing-hero h2,
+    .schedule-hero h2,
+    .price-hero h2,
+    .reserve-hero h2 {
+        font-size: 34px;
+    }
+}
