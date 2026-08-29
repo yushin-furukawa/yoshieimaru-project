@@ -971,6 +971,17 @@
 
 
 
+    /* 釣り物ごとの準備 */
+    .preparation-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .preparation-grid>div {
+        padding: 30px;
+    }
+
+
     .reservation-cta {
         padding: 80px 20px;
     }
