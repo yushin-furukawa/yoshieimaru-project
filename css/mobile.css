@@ -935,16 +935,30 @@
         font-size: 36px;
     }
 
-    .rental-section {
+    .rental-page {
         padding: 80px 20px;
     }
 
-    .rental-heading h2 {
+    .rental-page .price-heading h2 {
         font-size: 40px;
     }
 
-    .rental-list {
+    .rental-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .rental-card {
+        padding: 30px 25px;
+    }
+
+    .rental-card h3 {
+        font-size: 26px;
+        line-height: 1.5;
+    }
+
+    .rental-card strong {
+        font-size: 32px;
     }
 
     .price-notes {
