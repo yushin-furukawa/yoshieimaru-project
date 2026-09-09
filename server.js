@@ -653,6 +653,57 @@ async function startServer() {
 
                 }
 
+                // =========================
+                // sitemap.xml
+                // =========================
+
+                if (req.url === "/sitemap.xml") {
+
+                    const sitemap =
+                        fs.readFileSync(
+                            "./sitemap.xml",
+                            "utf-8"
+                        );
+
+                    res.writeHead(200, {
+
+                        "Content-Type":
+                            "application/xml; charset=utf-8"
+
+                    });
+
+                    res.end(sitemap);
+
+                    return;
+
+                }
+
+
+                // =========================
+                // robots.txt
+                // =========================
+
+                if (req.url === "/robots.txt") {
+
+                    const robots =
+                        fs.readFileSync(
+                            "./robots.txt",
+                            "utf-8"
+                        );
+
+                    res.writeHead(200, {
+
+                        "Content-Type":
+                            "text/plain; charset=utf-8"
+
+                    });
+
+                    res.end(robots);
+
+                    return;
+
+                }
+
 
                 // =========================
                 // 404
