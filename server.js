@@ -368,7 +368,8 @@ async function startServer() {
 
         const server =
             http.createServer(async (req, res) => {
-
+                const requestPath =
+                    new URL(req.url, "http://localhost").pathname;
 
                 // =========================
                 // 釣果API
@@ -456,10 +457,9 @@ async function startServer() {
                 // =========================
 
                 if (
-                    req.url === "/" ||
-                    req.url === "/index.html"
+                    requestPath === "/" ||
+                    requestPath === "/index.html"
                 ) {
-
                     const html =
                         fs.readFileSync(
                             "./index.html",
@@ -684,8 +684,6 @@ async function startServer() {
                 // robots.txt
                 // =========================
 
-                const requestPath =
-                    new URL(req.url, "http://localhost").pathname;
 
                 if (requestPath === "/robots.txt") {
 
