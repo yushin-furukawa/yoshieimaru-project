@@ -657,14 +657,16 @@ async function startServer() {
                 // sitemap.xml
                 // =========================
 
-                if (req.url === "/sitemap.xml") {
+                if (
+                    new URL(req.url, "http://localhost").pathname
+                    === "/sitemap.xml"
+                ) {
 
                     const sitemap =
                         fs.readFileSync(
-                            "./sitemap.xml",
+                            path.join(__dirname, "sitemap.xml"),
                             "utf-8"
                         );
-
                     res.writeHead(200, {
 
                         "Content-Type":
