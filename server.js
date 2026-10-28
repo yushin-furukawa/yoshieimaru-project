@@ -679,30 +679,47 @@ async function startServer() {
                 }
 
 
+
                 // =========================
                 // robots.txt
                 // =========================
 
-                if (req.url === "/robots.txt") {
+                const requestPath =
+                    new URL(req.url, "http://localhost").pathname;
 
-                    const robots =
-                        fs.readFileSync(
-                            "./robots.txt",
-                            "utf-8"
+                if (requestPath === "/robots.txt") {
+
+                    const robotsPath =
+                        path.join(__dirname, "robots.txt");
+
+                    if (!fs.existsSync(robotsPath)) {
+
+                        console.error(
+                            "robots.txt が見つかりません:",
+                            robotsPath
                         );
 
-                    res.writeHead(200, {
+                        res.writeHead(404, {
+                            "Content-Type":
+                                "text/plain; charset=utf-8"
+                        });
 
+                        res.end("robots.txt が見つかりません");
+                        return;
+                    }
+
+                    const robots =
+                        fs.readFileSync(robotsPath, "utf-8");
+
+                    res.writeHead(200, {
                         "Content-Type":
                             "text/plain; charset=utf-8"
-
                     });
 
                     res.end(robots);
-
                     return;
-
                 }
+
 
 
                 // =========================
